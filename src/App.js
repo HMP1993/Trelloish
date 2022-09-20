@@ -4,7 +4,7 @@ import Column from "./components/Column";
 function App() {
   return (
     <div className="App">
-      <Column columnTitle="column 1"  />
+      <Column   />
     </div>
   );
 }
