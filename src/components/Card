@@ -1,0 +1,8 @@
+const Card = ({ cardTitle }) => {
+  return (
+    <div>
+      <h4>{cardTitle}</h4>
+    </div>
+  );
+};
+export default Card;
