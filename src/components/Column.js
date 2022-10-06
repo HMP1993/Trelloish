@@ -1,20 +1,13 @@
-import React, { useState } from "react";
 
 
-
-const Column = () => {
-  const name = ['Column'];
-  const [columnTitle,setColumnTitle] = useState(name);
-
-  const addColumn = () => {
-    setColumnTitle(`Column ${name.length}`);
-
-  }
+const Column = (props) => {
+  // const name = [];
+  // const columnTitle = name;
 
   return (
     <div>
-      <h3>{columnTitle}</h3>
-      <button onClick={addColumn}>+</button>
+      <h3>{props.columnTitle}</h3>
+      {/* <button onClick={addColumn}>+</button> */}
     </div>
   );
 };
