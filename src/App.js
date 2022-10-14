@@ -3,16 +3,19 @@ import "./App.css";
 import Column from "./components/Column";
 
 function App() {
-  const name = [];
-  const [columnTitles, setColumnTitle] = useState(name);
+  
+  const [columnTitles, setColumnTitles] = useState([]);
 
   const addColumn = () => {
-    setColumnTitle((name) => [...name, `Column ${name.length + 1}`]);
+    setColumnTitles([...columnTitles, `Column ${columnTitles.length + 1}`]);
   };
 
   return (
     <div className="App">
-      <Column columnTitle={columnTitles[0]} />
+      {
+      columnTitles.map(ct => (<Column columnTitle={ct} />))
+      }
+      
       <button onClick={addColumn}>+</button>
     </div>
   );
