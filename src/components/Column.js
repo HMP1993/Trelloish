@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "./Card";
+import "../App.css";
 
 
 const Column = (props) => {
@@ -10,7 +11,7 @@ const Column = (props) => {
   };
 
   return (
-    <div>
+    <div className="Column">
       <h3>{props.columnTitle}</h3>
       {
       cardTitles.map((cat) => (<Card cardTitle={cat} />))
