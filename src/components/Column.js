@@ -12,10 +12,14 @@ const Column = (props) => {
 
   return (
     <div className="Column">
-      <h3>{props.columnTitle}</h3>
-      {
-      cardTitles.map((cat) => (<Card cardTitle={cat} />))
-      }
+      <div className="Header">
+        <button >&lArr;</button>
+        <h3>{props.columnTitle}</h3>
+        <button >&rArr;</button>
+      </div>
+      {cardTitles.map((cat) => (
+        <Card cardTitle={cat} />
+      ))}
 
       <button onClick={addCard}>+</button>
     </div>

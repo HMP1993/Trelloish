@@ -8,3 +8,6 @@
     border: black solid 1px;
     padding: 1em;
   }
+  .Column h3 {
+       display: inline-flex; 
+  }

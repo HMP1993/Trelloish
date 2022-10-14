@@ -12,10 +12,11 @@ function App() {
 
   return (
     <div className="App">
-      {
-      columnTitles.map(ct => (<Column columnTitle={ct} />))
-      }
+      {columnTitles.map((ct) => (
+        <Column columnTitle={ct}></Column>
+      ))}
       
+
       <button onClick={addColumn}>+</button>
     </div>
   );
