@@ -13,7 +13,7 @@ const Column = (props) => {
     <div>
       <h3>{props.columnTitle}</h3>
       {
-      cardTitles.map((ct) => (<Card cardTitle={ct} />))
+      cardTitles.map((cat) => (<Card cardTitle={cat} />))
       }
 
       <button onClick={addCard}>+</button>

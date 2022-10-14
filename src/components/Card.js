@@ -1,7 +1,7 @@
 const Card = (props) => {
   return (
     <div>
-      <h4>{props.cardTitles}</h4>
+      <h4>{props.cardTitle}</h4>
     </div>
   );
 };
