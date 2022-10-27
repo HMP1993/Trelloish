@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Add from "./components/Add";
 import Column from "./components/Column";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <Column columnTitle={ct}></Column>
       ))}
       
-
+        <Add></Add>
       <button onClick={addColumn}>+</button>
     </div>
   );
