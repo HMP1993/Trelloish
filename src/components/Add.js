@@ -1,14 +1,17 @@
 import { useState } from "react";
 
 const Add = (props) => {
+    
   const [enteredValue, setEnteredValue] = useState("");
+  
   const AddHandler = (event) => {
     event.preventDefault();
-    if (enteredValue.trim().length === 0) {
+    
+    if (!enteredValue) {
       return alert("No Input");
     }
     console.log(enteredValue);
-    props.onAddCl (enteredValue);
+    props.onAddCl(enteredValue);
     setEnteredValue("");
   };
   const TitleChangeHanlder = (event) => {

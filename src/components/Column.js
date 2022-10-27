@@ -13,13 +13,15 @@ const Column = (props) => {
 
   const [cardTitles, setCardTitles] = useState([]);
 
+  
+
   const addCard = () => {
     setCardTitles([...cardTitles, `Card ${cardTitles.length + 1}`]);
   };
 
   return (
     <div className="Column">
-      <div className="Header">
+      <div  className="Header">
         <button>&lArr;</button>
         <h3>{props.columnTitle}</h3>
         <button onClick={moveRight}>&rArr;</button>
@@ -27,7 +29,7 @@ const Column = (props) => {
       {cardTitles.map((cat) => (
         <Card cardTitle={cat} />
       ))}
-      <Add></Add>
+      <Add/>
       <button onClick={addCard}>+</button>
     </div>
   );
