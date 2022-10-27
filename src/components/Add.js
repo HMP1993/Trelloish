@@ -8,6 +8,7 @@ const Add = (props) => {
       return alert("No Input");
     }
     console.log(enteredValue);
+    props.onAddCl (enteredValue);
     setEnteredValue("");
   };
   const TitleChangeHanlder = (event) => {

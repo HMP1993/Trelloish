@@ -7,8 +7,8 @@ function App() {
   
   const [columnTitles, setColumnTitles] = useState([]);
 
-  const addColumn = () => {
-    setColumnTitles([...columnTitles, `Column ${columnTitles.length + 1}`]);
+  const addColumn = (props) => {
+    setColumnTitles([...columnTitles, props.enteredValue]);
   };
 
   return (
@@ -16,8 +16,8 @@ function App() {
       {columnTitles.map((ct) => (
         <Column columnTitle={ct}></Column>
       ))}
-      
-        <Add></Add>
+
+      <Add onAddCl={addColumn} />
       <button onClick={addColumn}>+</button>
     </div>
   );
