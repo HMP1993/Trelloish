@@ -28,7 +28,7 @@ function App() {
       alert("dupplicated value");
     }
   };
-  const DeleteCl = (itemToDelete) => {
+  const deleteCl = (itemToDelete) => {
     // console.log(itemToDelete);
     const changedColumnTitles = columnTitles.filter(
       (ct) => ct !== itemToDelete
@@ -52,7 +52,7 @@ function App() {
         <Column
           key={ct}
           columnTitle={ct}
-          onDeleteClHandler={() => DeleteCl(ct)}
+          onDeleteClHandler={() => deleteCl(ct)}
           onMoveLeftHandler={() => moveColumn(ct, i - 1)}
           onMoveRightHandler={() => moveColumn(ct, i + 1)}
         ></Column>

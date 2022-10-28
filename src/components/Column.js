@@ -37,11 +37,18 @@ const Column = (props) => {
       alert("dupplicated value");
     }
   };
-  const DeleteCa = (itemToDelete) => {
-    console.log(itemToDelete);
+  const deleteCa = (itemToDelete) => {
+   
     const changedCardTitles = cardTitles.filter((nca) => nca !== itemToDelete);
     setCardTitles(changedCardTitles);
   };
+  const renameCard = (cardTitleToRename, indexToInser) => {
+    const newCardTitle = prompt("Enter the new name", cardTitleToRename);
+    const newCards = cardTitles.filter((nca) => nca !== cardTitleToRename);
+    newCards.splice(indexToInser, 0, newCardTitle);
+    setCardTitles(newCards);
+  };
+  
 
   return (
     <div className="Column">
@@ -59,7 +66,8 @@ const Column = (props) => {
         <Card
           key={nca}
           cardTitle={nca}
-          onDeleteClHandler={() => DeleteCa(nca)}
+          onDeleteClHandler={() => deleteCa(nca)}
+          onRenameHandler={() => renameCard(nca)}
         />
       ))}
 

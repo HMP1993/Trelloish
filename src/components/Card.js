@@ -5,7 +5,7 @@ const Card = (props) => {
       <span onClick={props.onDeleteClHandler} style={{ cursor: "pointer" }}>
         ❌
       </span>
-      <span style={{ cursor: "pointer" }}>✏️</span>
+      <span onClick={props.onRenameHandler} style={{ cursor: "pointer" }}>✏️</span>
     </div>
   );
 };
