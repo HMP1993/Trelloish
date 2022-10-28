@@ -29,7 +29,7 @@ function App() {
     }
   };
   const DeleteCl = (itemToDelete) => {
-    console.log(itemToDelete);
+    // console.log(itemToDelete);
     const changedColumnTitles = columnTitles.filter(
       (ct) => ct !== itemToDelete
     );

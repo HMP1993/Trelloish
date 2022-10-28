@@ -11,6 +11,7 @@ const Add = (props) => {
     }
     console.log(enteredValue);
     props.onAddCl(enteredValue);
+    // props.onAddCa(enteredValue)
     setEnteredValue("");
   };
   const TitleChangeHanlder = (event) => {
