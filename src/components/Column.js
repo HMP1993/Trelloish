@@ -3,7 +3,6 @@ import Card from "./Card";
 import "../App.css";
 import Add from "./Add";
 
-
 const Column = (props) => {
   const [currentIndex, setNewIndex] = useState(props.columnTitle);
 
@@ -13,15 +12,16 @@ const Column = (props) => {
 
   const [cardTitles, setCardTitles] = useState([]);
 
-  
-
   const addCard = () => {
     setCardTitles([...cardTitles, `Card ${cardTitles.length + 1}`]);
   };
 
   return (
     <div className="Column">
-      <div  className="Header">
+      <span onClick={props.onDeleteClHandler} style={{ cursor: "pointer" }}>
+        ❌
+      </span>
+      <div className="Header">
         <button>&lArr;</button>
         <h3>{props.columnTitle}</h3>
         <button onClick={moveRight}>&rArr;</button>
@@ -29,7 +29,7 @@ const Column = (props) => {
       {cardTitles.map((cat) => (
         <Card cardTitle={cat} />
       ))}
-      <Add/>
+      <Add />
       <button onClick={addCard}>+</button>
     </div>
   );

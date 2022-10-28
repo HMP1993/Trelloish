@@ -8,11 +8,10 @@ function App() {
   const nameChecker = (newEnteredValue) => {
     let isDupplicate = false;
     for (let i = 0; i < columnTitles.length; i++) {
-      // console.log(columnTitles.find((o) => o === newEnteredValue), `counter is ${i}` );
       isDupplicate = columnTitles.find((o) => o === newEnteredValue)
         ? true
         : false;
-      // console.log(columnTitles[i], 'hossein' )
+
       if (isDupplicate) {
         return true;
       }
@@ -22,21 +21,29 @@ function App() {
 
   const addColumn = (ncl) => {
     const isValid = !nameChecker(ncl);
-    // nameChecker(ncl);
+
     if (isValid) {
       setColumnTitles([...columnTitles, ncl]);
     } else {
       alert("dupplicated value");
     }
   };
+  const DeleteCl = (itemToDelete) => {
+    console.log(itemToDelete);
+    const changedColumnTitles = columnTitles.filter(
+      (ct) => ct !== itemToDelete
+    );
+    setColumnTitles(changedColumnTitles);
+  };
 
   return (
     <div className="App">
-      {columnTitles.map((ct) => (
-        <Column key={ct} columnTitle={ct}></Column>
-      ))}
-
       <Add onAddCl={(clEntered) => addColumn(clEntered)} />
+      {columnTitles.map((ct) => (
+        <Column key={ct} columnTitle={ct}
+         onDeleteClHandler= {()=>DeleteCl(ct) }
+         ></Column>
+      ))}
     </div>
   );
 }

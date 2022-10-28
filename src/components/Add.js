@@ -1,12 +1,11 @@
 import { useState } from "react";
 
 const Add = (props) => {
-    
   const [enteredValue, setEnteredValue] = useState("");
-  
+
   const AddHandler = (event) => {
     event.preventDefault();
-    
+
     if (!enteredValue) {
       return alert("No Input");
     }
