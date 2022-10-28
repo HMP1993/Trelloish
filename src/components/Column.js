@@ -37,12 +37,20 @@ const Column = (props) => {
       alert("dupplicated value");
     }
   };
+  const DeleteCa = (itemToDelete) => {
+    console.log(itemToDelete);
+    const changedCardTitles = cardTitles.filter(
+      (nca) => nca !== itemToDelete
+    );
+    setCardTitles(changedCardTitles);
+  };
 
   return (
     <div className="Column">
       <span onClick={props.onDeleteClHandler} style={{ cursor: "pointer" }}>
         ❌
       </span>
+      <span style={{ cursor: "pointer" }}>✏️</span>
       <div className="Header">
         <button>&lArr;</button>
         <h3>{props.columnTitle}</h3>
@@ -50,7 +58,11 @@ const Column = (props) => {
       </div>
       <Add onAddCl={(caEntered) => addCard(caEntered)} />
       {cardTitles.map((nca) => (
-        <Card key={nca} cardTitle={nca} />
+        <Card
+          key={nca}
+          cardTitle={nca}
+          onDeleteClHandler={() => DeleteCa(nca)}
+        />
       ))}
 
       {/* <button onClick={addCard}>+</button> */}
