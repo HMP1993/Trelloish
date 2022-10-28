@@ -35,14 +35,27 @@ function App() {
     );
     setColumnTitles(changedColumnTitles);
   };
+  const moveColumn = (columnTitleToMove, indexToInsert) => {
+    if (indexToInsert < 0 || indexToInsert === columnTitles.length) {
+      alert("error");
+      return;
+    }
+    const newColumns = columnTitles.filter((ct) => ct !== columnTitleToMove);
+    newColumns.splice(indexToInsert, 0, columnTitleToMove);
+    setColumnTitles(newColumns);
+  };
 
   return (
     <div className="App">
       <Add onAddCl={(clEntered) => addColumn(clEntered)} />
-      {columnTitles.map((ct) => (
-        <Column key={ct} columnTitle={ct}
-         onDeleteClHandler= {()=>DeleteCl(ct) }
-         ></Column>
+      {columnTitles.map((ct, i) => (
+        <Column
+          key={ct}
+          columnTitle={ct}
+          onDeleteClHandler={() => DeleteCl(ct)}
+          onMoveLeftHandler={() => moveColumn(ct, i - 1)}
+          onMoveRightHandler={() => moveColumn(ct, i + 1)}
+        ></Column>
       ))}
     </div>
   );

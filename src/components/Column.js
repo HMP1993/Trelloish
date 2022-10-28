@@ -39,9 +39,7 @@ const Column = (props) => {
   };
   const DeleteCa = (itemToDelete) => {
     console.log(itemToDelete);
-    const changedCardTitles = cardTitles.filter(
-      (nca) => nca !== itemToDelete
-    );
+    const changedCardTitles = cardTitles.filter((nca) => nca !== itemToDelete);
     setCardTitles(changedCardTitles);
   };
 
@@ -52,9 +50,9 @@ const Column = (props) => {
       </span>
       <span style={{ cursor: "pointer" }}>✏️</span>
       <div className="Header">
-        <button>&lArr;</button>
+        <button onClick={props.onMoveLeftHandler}>&lArr;</button>
         <h3>{props.columnTitle}</h3>
-        <button>&rArr;</button>
+        <button onClick={props.onMoveRightHandler}>&rArr;</button>
       </div>
       <Add onAddCl={(caEntered) => addCard(caEntered)} />
       {cardTitles.map((nca) => (
