@@ -4,12 +4,6 @@ import "../App.css";
 import Add from "./Add";
 
 const Column = (props) => {
-  // const [currentIndex, setNewIndex] = useState(props.columnTitle);
-
-  // const moveRight = () => {
-  //   setNewIndex([...currentIndex, currentIndex.index + 1]);
-  // };
-
   const [cardTitles, setCardTitles] = useState([]);
   const nameChecker = (newEnteredValue) => {
     let isDupplicate = false;
@@ -25,9 +19,6 @@ const Column = (props) => {
     return false;
   };
 
-  // const addCard = () => {
-  //   setCardTitles([...cardTitles, `Card ${cardTitles.length + 1}`]);
-  // };
   const addCard = (nca) => {
     const isValid = !nameChecker(nca);
 
@@ -38,17 +29,21 @@ const Column = (props) => {
     }
   };
   const deleteCa = (itemToDelete) => {
-   
     const changedCardTitles = cardTitles.filter((nca) => nca !== itemToDelete);
     setCardTitles(changedCardTitles);
   };
-  const renameCard = (cardTitleToRename, indexToInser) => {
-    const newCardTitle = prompt("Enter the new name", cardTitleToRename);
-    const newCards = cardTitles.filter((nca) => nca !== cardTitleToRename);
-    newCards.splice(indexToInser, 0, newCardTitle);
-    setCardTitles(newCards);
+  const renameCard = (cardTitleToRename, indexToInsert) => {
+    const isValid = !nameChecker(cardTitles);
+
+    if (isValid) {
+      const newCardTitle = prompt("Enter the new name", cardTitleToRename);
+      const newCards = cardTitles.filter((nca) => nca !== cardTitleToRename);
+      newCards.splice(indexToInsert, 0, newCardTitle);
+      setCardTitles(newCards);
+    } else {
+      alert("dupplicated value");
+    }
   };
-  
 
   return (
     <div className="Column">

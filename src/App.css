@@ -3,11 +3,11 @@
     display: inline-flex;
     margin: 2em;
   }
-  .Column {
+  /* .Column {
         margin: 0 2em;
     border: black solid 1px;
     padding: 1em;
-  }
+  } */
   .Column h3 {
        display: inline-flex; 
   }

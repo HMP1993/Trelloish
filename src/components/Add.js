@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 
 const Add = (props) => {
   const [enteredValue, setEnteredValue] = useState("");
@@ -19,8 +21,16 @@ const Add = (props) => {
   };
   return (
     <div>
-      <input onChange={TitleChangeHanlder} value={enteredValue} />
-      <button onClick={AddHandler}>Add</button>
+      <TextField
+        id="standard-basic"
+        label="Say my name"
+        variant="standard"
+        onChange={TitleChangeHanlder}
+        value={enteredValue}
+      />
+      <Button size="small" variant="outlined" onClick={AddHandler}>
+        Add
+      </Button>
     </div>
   );
 };
